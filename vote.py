@@ -67,6 +67,7 @@ while True:
                     placeString = place + "th"
 
                 print(f"Natalie Has { votes } votes! And She is in { placeString } place!")
+                
                 break
             else:
                 place += 1
