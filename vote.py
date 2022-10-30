@@ -7,11 +7,6 @@ import os
 
 firstClr = False
 
-files = os.listdir("./configs")
-
-for configFile in files:
-    os.path.abspath(configFile)
-
 options = Options()
 
 options.add_argument('--log-level=3')
@@ -39,16 +34,19 @@ while True:
         voteButton = driver.find_element(By.ID, "pd-vote-button11227721")
 
         inputEl.click()
+        driver.implicitly_wait(1)
         voteButton.click()
 
         voteTitle = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "question-top-11227721")))
 
-        voters = driver.find_elements(By.CLASS_NAME, "pds-feedback-group")
+        voterWrapper = driver.find_element(By.ID, "pds-results")
+
+        voters = voterWrapper.find_elements(By.TAG_NAME, "li")
 
         votes = 0
         place = 1
         for voter in voters:
-            name = voter.find_element(By.XPATH, "//label/span").text
+            name = voter.find_element(By.TAG_NAME, "label").find_element(By.TAG_NAME, "span").text
             if (name == "Natalie French – Christian Heritage"):
 
                 votes = voter.find_element(By.XPATH, "//label/span/span[@class='pds-feedback-votes']").text
@@ -73,7 +71,8 @@ while True:
                 place += 1
 
         driver.close()
-    except:
+    except Exception as e:
         print("Error Occured!")
+        print(e)
         driver.close()
         continue
