@@ -1,5 +1,5 @@
 # Voting-Bot
-A Simple Voting Bot/Web Scaper
+A Simple Voting Bot/Web Scraper
 
 ## Dependencies
 
