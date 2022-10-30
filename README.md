@@ -1,2 +1,2 @@
 # Voting-Bot
-A Voting Bot/Web Scaper for a friend
+A Simple Voting Bot/Web Scaper
