@@ -24,7 +24,7 @@ counter = 1
 url = "https://okc.vypeok.com/2022/10/25/vote-now-okc-area-private-schools-miss-volleyball-presented-by-community-builders-poll-ends-11-1/"
 
 while True:
-    driver = webdriver.Chrome("C:\Program Files\Chrome Driver\chromedriver.exe", chrome_options=options, service_log_path='NULL')
+    driver = webdriver.Chrome("./chromedriver.exe", chrome_options=options, service_log_path='NULL')
     
     if (firstClr == False):
         os.system("cls")
