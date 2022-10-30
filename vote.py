@@ -34,7 +34,7 @@ while True:
         voteButton = driver.find_element(By.ID, "pd-vote-button11227721")
 
         inputEl.click()
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(0.25)
         voteButton.click()
 
         voteTitle = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "question-top-11227721")))
@@ -73,6 +73,5 @@ while True:
         driver.close()
     except Exception as e:
         print("Error Occured!")
-        print(e)
         driver.close()
         continue
