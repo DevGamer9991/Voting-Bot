@@ -1,8 +1,12 @@
+from urllib.request import proxy_bypass
+from weakref import proxy
+from webbrowser import get
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 import os
 from threading import Thread
 import time
@@ -10,6 +14,7 @@ import time
 options = Options()
 
 options.add_argument('--log-level=3')
+options.add_argument("--incognito")
 options.add_argument("--window-size=1920,1080")
 options.add_argument('headless')
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -20,7 +25,8 @@ url = "https://okc.vypeok.com/2022/10/25/vote-now-okc-area-private-schools-miss-
 
 def bot(counter, url):
     while True:
-        driver = webdriver.Chrome("./chromedriver.exe", chrome_options=options, service_log_path='NULL')
+
+        driver = webdriver.Chrome("./chromedriver.exe", chrome_options=options, service_log_path='logs.txt')
 
         print(f"Started New Vote")
         counter += 1
@@ -74,9 +80,8 @@ def bot(counter, url):
 
                     print(f"Gracie Has { votes } votes!")
                 
-            time.sleep(5)
+            time.sleep(10)
             
-
             driver.quit()
         except Exception as e:
             print("Error Occured!")
@@ -106,7 +111,7 @@ t20 = Thread(target=bot, args=(counter, url))
 
 t1.start()
 t2.start()
-# t3.start()
+t3.start()
 # t4.start()
 # t5.start()
 # t6.start()
