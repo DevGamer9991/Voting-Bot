@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 from threading import Thread
+import time
 
 options = Options()
 
@@ -72,6 +73,9 @@ def bot(counter, url):
                     votes = votes.split(" votes")[0]
 
                     print(f"Gracie Has { votes } votes!")
+                
+            time.sleep(5)
+            
 
             driver.quit()
         except Exception as e:
@@ -102,21 +106,21 @@ t20 = Thread(target=bot, args=(counter, url))
 
 t1.start()
 t2.start()
-t3.start()
-t4.start()
-t5.start()
-t6.start()
-t7.start()
-t8.start()
-t9.start()
-t10.start()
-t11.start()
-t12.start()
-t13.start()
-t14.start()
-t15.start()
-t16.start()
-t17.start()
-t18.start()
-t19.start()
-t20.start()
+# t3.start()
+# t4.start()
+# t5.start()
+# t6.start()
+# t7.start()
+# t8.start()
+# t9.start()
+# t10.start()
+# t11.start()
+# t12.start()
+# t13.start()
+# t14.start()
+# t15.start()
+# t16.start()
+# t17.start()
+# t18.start()
+# t19.start()
+# t20.start()
