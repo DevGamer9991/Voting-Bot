@@ -1,6 +1,8 @@
 # Voting-Bot
 A Simple Voting Bot/Web Scraper
 
+### ** This Bot was archived because it is now not needed **
+
 ## Dependencies
 
 Requires You to install these dependencies.
