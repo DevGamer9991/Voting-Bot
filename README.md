@@ -1,7 +1,6 @@
+### ** This bot is archived because it is no longer needed **
 # Voting-Bot
 A Simple Voting Bot/Web Scraper
-
-### ** This Bot was archived because it is now not needed **
 
 ## Dependencies
 
