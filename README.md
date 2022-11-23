@@ -1,4 +1,4 @@
-### ** This bot is archived because it is no longer needed **
+### ** This bot is archived because it is no longer needed so I cant guaranty that it will work **
 # Voting-Bot
 A Simple Voting Bot/Web Scraper
 
